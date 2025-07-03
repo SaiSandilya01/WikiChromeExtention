@@ -8,7 +8,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain.chat_models import init_chat_model
 
 # Set Gemini API key
-os.environ["GOOGLE_API_KEY"] = "AIzaSyChjzeIfWqBxEB2z3z9bUQu6Q5RCmWqfls"
+os.environ["GOOGLE_API_KEY"] = "API KEY"
 
 # Init LLM and parser
 llm = init_chat_model("gemini-2.0-flash", model_provider="google_genai")
