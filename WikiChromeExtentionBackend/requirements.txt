@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+langchain
+wikipedia
+faiss-cpu
+langchain_community
+langchain_google_genai
+formatted
