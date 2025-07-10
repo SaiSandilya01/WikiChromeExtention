@@ -6,9 +6,10 @@ from urllib.parse import urlparse, unquote
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain.chat_models import init_chat_model
+from langchain_community.retrievers import WikipediaRetriever
 
 # Set Gemini API key
-os.environ["GOOGLE_API_KEY"] = "API KEY"
+os.environ["GOOGLE_API_KEY"] = "AIzaSyAIF4iJTC0eI0zWb8coM7Embaho1yykjfc"
 
 # Init LLM and parser
 llm = init_chat_model("gemini-2.0-flash", model_provider="google_genai")
@@ -21,6 +22,8 @@ class QuestionRequest(BaseModel):
     wiki_url: str
     question: str
 
+def format_docs(docs):
+    return "\n\n".join(doc.page_content for doc in docs)
 # Helper: extract title from URL
 def get_title_from_url(url: str) -> str:
     try:
@@ -35,8 +38,11 @@ def get_title_from_url(url: str) -> str:
 # Helper: fetch Wikipedia page content
 def fetch_wiki_content(title: str) -> str:
     try:
-        page = wikipedia.page(title)
-        return page.content
+        retriever = WikipediaRetriever()
+        docs = retriever.invoke(title)
+        formatted_docs = format_docs(docs)
+        #page = wikipedia.page(title)
+        return formatted_docs
     except wikipedia.exceptions.DisambiguationError as e:
         return f"Disambiguation error: multiple results found for '{title}'. Options: {e.options}"
     except wikipedia.exceptions.PageError:
