@@ -8,14 +8,14 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain.chat_models import init_chat_model
 from langchain_community.retrievers import WikipediaRetriever
 
-# Set Gemini API key
-os.environ["GOOGLE_API_KEY"] = "AIzaSyAIF4iJTC0eI0zWb8coM7Embaho1yykjfc"
 
-# Init LLM and parser
+os.environ["GOOGLE_API_KEY"] = "API KEY"
+
+
 llm = init_chat_model("gemini-2.0-flash", model_provider="google_genai")
 parser = StrOutputParser()
 
-# FastAPI app
+
 app = FastAPI()
 
 class QuestionRequest(BaseModel):
@@ -50,7 +50,7 @@ def fetch_wiki_content(title: str) -> str:
     except Exception as ex:
         return f"An error occurred: {str(ex)}"
 
-# Helper: build and invoke chat-style prompt chain
+
 def ask_wiki_ai(context: str, question: str) -> str:
     prompt = ChatPromptTemplate.from_messages([
         ("system", context),
@@ -59,7 +59,7 @@ def ask_wiki_ai(context: str, question: str) -> str:
     chain = prompt | llm | parser
     return chain.invoke({"input": question})
 
-# Routes
+
 @app.get("/")
 def root():
     return {"message": "Wikipedia Gemini QA Service is running with chat-style prompts!"}
