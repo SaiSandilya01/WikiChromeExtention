@@ -1,0 +1,21 @@
+{
+  "markdown": "![](https://www.tiaa.org/content/dam/tiaa/public/images/dummy-img.png)\n\nRetirement plans\n\n# Your road to retirement begins here\n\nEnrolling in your employer’s retirement plan is a great first step toward securing your future. It only takes a few minutes, and the benefits can last a lifetime.\n\n# Find your employer to get started\n\nYou can then select a retirement plan and select enroll to get started.\n\nHit enter to search\n\nSearch for your employer\n\nAlready enrolled and need to register for online access? [RegisterOpens in a new window](https://auth.tiaa.org/public/authentication/enroll#/email)\n\nIf you’re self-employed or your employer doesn’t offer TIAA, consider an [IRA](https://www.tiaa.org/public/retire/financial-products/iras) or personal [annuity](https://www.tiaa.org/public/retire/financial-products/annuities/personal-annuities) to ensure you are saving for your future.\n\n# Over a century of serving those who do good in the world\n\nFor more than 100 years, TIAA has helped professionals in academic, government, medical and other non-profit fields find confidence in retirement. See how you can build a more secure financial future with our variety of investment and insurance options including plans with lifetime income. 1\n\n![](https://www.tiaa.org/content/dam/tiaa/public/images/dummy-img.png)\n\n### Know where you stand today\n\nWe can help you determine whether you’re on track for the retirement you envision.\n\n![](https://www.tiaa.org/content/dam/tiaa/public/images/dummy-img.png)\n\n### Create a personalized plan\n\nWe take the time to understand your values and goals, then help you create a plan to move towards retirement.\n\n![](https://www.tiaa.org/content/dam/tiaa/public/images/dummy-img.png)\n\n### Meet your goals\n\nWith low fees and many services at no additional cost, you can take your retirement savings to the next level.\n\n### Know where you stand today\n\nWe can help you determine whether you’re on track for the retirement you envision.\n\n### Create a personalized plan\n\nWe take the time to understand your values and goals, then help you create a plan to move towards retirement.\n\n### Meet your goals\n\nWith low fees and many services at no additional cost, you can take your retirement savings to the next level.\n\n## Get trusted help with your enrollment or investing questions\n\nCall [800-842-2252Call 800-842-2252](tel:800-842-2252) to schedule an appointment to get more information. We’re here weekdays from 8 A.M. – 10 P.M. (ET).\n\n1 Any guarantees under annuities issued by TIAA are subject to TIAA's claims-paying ability.\n\nG-3134837P-E0924W",
+  "metadata": {
+    "title": "Enroll in an Employer-Sponsored Retirement Plan | TIAA",
+    "viewport": "width=device-width, initial-scale=1",
+    "description": "Search for your employer name to locate the information you need to enroll in your employer-sponsored retirement plan.",
+    "theme-color": "#2196F3",
+    "template": "page-content",
+    "language": "en",
+    "favicon": "https://www.tiaa.org/content/dam/tiaa/global/logo/tiaa04016404.ico",
+    "scrapeId": "3232a761-babf-4eba-aaa0-68ff7884236a",
+    "sourceURL": "https://www.tiaa.org/public/enroll-search",
+    "url": "https://www.tiaa.org/public/enroll-search",
+    "statusCode": 200,
+    "contentType": "text/html;charset=utf-8",
+    "proxyUsed": "basic",
+    "cacheState": "miss",
+    "creditsUsed": 1
+  },
+  "warning": "This scrape job was throttled at your current concurrency limit. If you'd like to scrape faster, you can upgrade your plan."
+}

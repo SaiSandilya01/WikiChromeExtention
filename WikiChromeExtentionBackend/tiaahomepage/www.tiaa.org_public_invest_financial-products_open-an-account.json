@@ -1,0 +1,21 @@
+{
+  "markdown": "# Open an account\n\nTypes of accounts\n\n## Choose the account you want to open\n\n-\nIndividual Retirement Account (IRA)\n\n[Get started](https://www.tiaa.org/public/land/iras/accountopen)\n-\nBrokerage (stocks, bonds, ETFs, mutual funds)\n\n[Get started\\\\\nGet started about Brokerage Opens in new window](https://shared.tiaa.org/private/mytcbrokerageaccountopening/aobrokerageapp/home/required)\n-\nRetail Mutual Funds\n\n[Download application\\\\\nDownload application](https://www.tiaa.org/public/pdf/m/mf-app.pdf)\n-\nPortfolio Advisor (managed account with a dedicated advisor)\n\n[Call 888-211-3868](tel:888-211-3868)\n-\n529 college savings plan\n\n[Find 529 Plan](https://www.tiaa.org/public/invest/financial-products/529-college-savings)\n\nNeed something else?\n\n### Enroll in your employer's retirement plan\n\n[Enroll now](https://www.tiaa.org/public/enroll-search)\n\n### Register for online access to your existing accounts\n\n[Register now\\\\\nOpens in new window](https://auth.tiaa.org/public/authentication/enroll)\n\nSaved application\n\n## Did you previously start an application?\n\nIf you saved an application that you didn't complete, log in and pick up where you left off.\n\n[Log in\\\\\nOpens in new window](https://auth.tiaa.org/public/authentication/securelogin/authenticate)\n\nThis material is for informational or educational purposes only and is not fiduciary investment advice, or a securities, investment strategy, or insurance product recommendation. This material does not consider an individual’s own objectives or circumstances which should be the basis of any investment decision.\n\n4321700",
+  "metadata": {
+    "title": "Open an Account With TIAA | TIAA",
+    "favicon": "https://www.tiaa.org/content/dam/tiaa/global/logo/tiaa04016404.ico",
+    "theme-color": "#2196F3",
+    "template": "page-content",
+    "viewport": "width=device-width, initial-scale=1",
+    "description": "From investment accounts to retirement accounts, TIAA offers a wide-range of options to meet your financial goals. Find out how to open an account today.",
+    "language": "en",
+    "scrapeId": "e7553658-55e3-4ee9-8a19-5250c3bcba03",
+    "sourceURL": "https://www.tiaa.org/public/invest/financial-products/open-an-account",
+    "url": "https://www.tiaa.org/public/invest/financial-products/open-an-account",
+    "statusCode": 200,
+    "contentType": "text/html;charset=utf-8",
+    "proxyUsed": "basic",
+    "cacheState": "miss",
+    "creditsUsed": 1
+  },
+  "warning": "This scrape job was throttled at your current concurrency limit. If you'd like to scrape faster, you can upgrade your plan."
+}
