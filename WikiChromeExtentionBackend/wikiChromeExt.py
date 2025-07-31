@@ -1,5 +1,7 @@
 import os
-from fastapi import FastAPI
+
+
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import wikipedia
 from urllib.parse import urlparse, unquote
@@ -7,9 +9,10 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain.chat_models import init_chat_model
 from langchain_community.retrievers import WikipediaRetriever
+import json
 
 
-os.environ["GOOGLE_API_KEY"] = "API KEY"
+os.environ["GOOGLE_API_KEY"] = "API key"
 
 
 llm = init_chat_model("gemini-2.0-flash", model_provider="google_genai")
@@ -19,7 +22,7 @@ parser = StrOutputParser()
 app = FastAPI()
 
 class QuestionRequest(BaseModel):
-    wiki_url: str
+    url: str
     question: str
 
 def format_docs(docs):
@@ -59,6 +62,32 @@ def ask_wiki_ai(context: str, question: str) -> str:
     chain = prompt | llm | parser
     return chain.invoke({"input": question})
 
+def load_markdown_store(directory_path: str) -> dict:
+    markdown_store = {}
+    for filename in os.listdir(directory_path):
+        if filename.endswith(".json"):
+            filepath = os.path.join(directory_path, filename)
+            try:
+                with open(filepath, "r", encoding="utf-8") as f:
+                    content = json.load(f)
+                    url = content.get("metadata", {}).get("url")
+                    markdown = content.get("markdown")
+                    if url and markdown:
+                        markdown_store[url.lower()] = markdown
+            except Exception as e:
+                print(f"Failed to load {filename}: {e}")
+    return markdown_store
+
+def get_markdown_by_url(url: str, store: dict) -> str:
+    return store.get(url.lower(), None)
+
+
+
+#%%
+url = "https://www.tiaa.org/public"
+store = load_markdown_store("tiaahomepage")
+markdown = get_markdown_by_url(url, store)
+
 
 @app.get("/")
 def root():
@@ -66,16 +95,24 @@ def root():
 
 @app.post("/ask")
 def ask_question(request: QuestionRequest):
-    title = get_title_from_url(request.wiki_url)
-    context = fetch_wiki_content(title)
-    answer = ask_wiki_ai(context, request.question)
+    url = request.url.strip().lower()
+    question = request.question.strip()
+
+    context = get_markdown_by_url(url, store)
+
+    if not context:
+        raise HTTPException(status_code=404, detail="No markdown found for the provided URL.")
+
+    answer = ask_wiki_ai(context, question)
+
     return {
-        "wiki_title": title,
-        "question": request.question,
+        "url": url,
+        "question": question,
         "answer": answer
     }
 
 # For direct run
 if __name__ == "__main__":
     import uvicorn
+    print(markdown)
     uvicorn.run("wikiChromeExt:app", host="0.0.0.0", port=8000, reload=True)
