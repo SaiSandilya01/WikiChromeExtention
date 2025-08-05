@@ -56,7 +56,7 @@ def fetch_wiki_content(title: str) -> str:
 
 def ask_wiki_ai(context: str, question: str) -> str:
     prompt = ChatPromptTemplate.from_messages([
-        ("system", context),
+        ("system", context+ " Answer in 1-2 sentences only."),
         ("human", "{input}")
     ])
     chain = prompt | llm | parser
