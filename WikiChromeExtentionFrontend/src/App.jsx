@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import './App.css';
 
 function App() {
@@ -48,7 +49,8 @@ function App() {
       <div className="chat-box">
         {messages.map((msg, i) => (
           <div key={i} className={`msg ${msg.sender === 'You' ? 'user' : 'bot'}`}>
-            <strong>{msg.sender}:</strong> {msg.text}
+            <strong>{msg.sender}:</strong> 
+            <ReactMarkdown>{msg.text}</ReactMarkdown>
           </div>
         ))}
       </div>
